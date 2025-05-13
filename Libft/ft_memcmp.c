@@ -1,19 +1,27 @@
-int ft_memcmp( const void * pointer1, const void * pointer2, size_t size )
+#include "libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
-	i = 0 ; 
+	unsigned char	*s1cpy;
+	unsigned char	*s2cpy;
+	size_t			i;
 
-	 unsigned char *p1 = ( unsigned char *)pointer1 ;
-	 unsigned char *p2 = ( unsigned char *)pointer2; 
-	
-	while(i < size)
+	i = 0;
+	s1cpy = (unsigned char *) s1;
+	s2cpy = (unsigned char *) s2;
+	while (i < n)
 	{
-		if(p1[i] != p2[i])
-			return (p1[i] -p2[i]) ; 
-	i++ ; 
+		if (s1cpy[i] == s2cpy[i])
+		{
+			i++;
+		}
+		else
+		{
+			if (s1cpy[i] < s2cpy[i])
+				return (-1);
+			else
+				return (1);
+		}
 	}
-	return (0) ; 
-	
-	
+	return (0);
 }
-

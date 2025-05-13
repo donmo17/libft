@@ -1,10 +1,8 @@
- #include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
-int ft_isascii(int character)
+int	ft_isdigit( int c )
 {
-	if(character < 0 || character > 127 ) 
-		return (0) ; 
-	return (1) ;	
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
-

@@ -1,23 +1,21 @@
-#include <stdlib.h>
+#include "libft.h"
 
-char *ft_strdup(const char *source)
+char	*ft_strdup(const char *src)
 {
-    int i = 0;
-    int srclen;
-    char *srcmalloc;
+	size_t	i;
+	size_t	srclen;
+	char	*srcpy;
 
-    srclen = ft_strlen(source);
-    srcmalloc = malloc(srclen + 1);
-    if (!srcmalloc)
-        return (NULL);
-
-    while (source[i])
-    {
-        srcmalloc[i] = source[i];
-        i++;
-    }
-    srcmalloc[i] = '\0'; 
-
-    return (srcmalloc);
+	i = 0;
+	srclen = ft_strlen(src);
+	srcpy = malloc((srclen + 1) * sizeof(char));
+	if (!srcpy)
+		return (NULL);
+	while (i < srclen)
+	{
+		srcpy[i] = src[i];
+		i++;
+	}
+	srcpy[i] = '\0';
+	return (srcpy);
 }
-

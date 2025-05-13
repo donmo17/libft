@@ -1,20 +1,16 @@
-#include <stddef.h>
+#include "libft.h"
 
-void *ft_memset(void *pointer, int value, size_t count)
+void	*ft_memset( void *pointer, int value, size_t count )
 {
-    size_t i;
-    unsigned char *pointercpy;
+	unsigned char	*pointercpy;
+	size_t			i;
 
-    pointercpy = (unsigned char *)pointer;
-    i = 0;
-    while (i < count)
-    {
-        pointercpy[i] = (unsigned char)value;
-        i++;
-    }
-    return (pointer);
+	i = 0;
+	pointercpy = (unsigned char *) pointer;
+	while (i < count)
+	{
+		pointercpy[i] = (unsigned char) value;
+		i++;
+	}
+	return (pointer);
 }
-
-// unsigned pour obliger a avoir que des valeurs positives 
-
-

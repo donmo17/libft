@@ -1,17 +1,8 @@
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
-int ft_isalpha(int character) 
+int	ft_isalpha( int c )
 {
-	
-		if((character < 'a' || character > 'z') &&  (character < 'A' || character > 'Z'))
-		{	
-	
-			return (0) ; 
-		} 
-
-
-	
-		return (1); 
+	if ((c >= 'a' && c <= 'z' ) || (c >= 'A' && c <= 'Z' ))
+		return (1);
+	return (0);
 }
-

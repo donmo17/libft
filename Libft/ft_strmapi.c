@@ -1,33 +1,31 @@
-#include <stdlib.h>
-#include "libft.h" 
+#include "libft.h"
 
-char *majModulo(unsigned int, char c )
-	
-{	while( i % 2 == 0 && c >= a &&  c <= 'z' )
-	{
-		c -= 32 ; 	
-
-	} 
-	return c ; 
+char	minmaj(unsigned int i, char c)
+{
+	if (i % 2 == 0)
+		return (c);
+	else
+		return (c - 32);
 }
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char	*scpy;
+	char	*ss;
+	int		i;
 
-    if (!s || !f)
-        return NULL;
-
-	size_t sLen;
-	size_t i;
-	char *sDest ; 
-	sLen = ft_strlen(s);
-	if(!sDest = malloc((sLen + 1)  * sizeof(char)))
-		return (NULL);
-	while(sLen > i )
+	i = 0;
+	ss = (char *)s;
+	scpy = malloc((ft_strlen(s) + 1));
+	if (!scpy)
 	{
-		sDest[i] = f (i, (s[i]) );
-		i++ ;
-
-	} 
-		sDest = '\0' ;
+		return (NULL);
+	}
+	while (ss[i])
+	{
+		scpy[i] = f(i, ss[i]);
+		i++;
+	}
+	scpy[i] = '\0';
+	return (scpy);
 }

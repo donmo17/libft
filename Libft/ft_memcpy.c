@@ -1,20 +1,21 @@
-#include <stdio.h>
 
+#include "libft.h"
 
-void *ft_memcpy(void * destination, const void * source, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	 if (!destination || !source)
-        return NULL;
-	size_t i;
-	i = 0 ; 
+	char	*srcpy;
+	char	*destcpy;
+	size_t	i;
 
-	unsigned char * destcopy = (unsigned char *)destination;
-	unsigned char * srcopy = (unsigned char *) source ;
-
-	while(size > i )
+	srcpy = (char *)src;
+	destcpy = (char *)dest;
+	i = 0;
+	if (dest == src || n == 0)
+		return (dest);
+	while (i < n)
 	{
-		destcopy[i] = srcopy[i] ; 
-		i++; 
+		destcpy[i] = srcpy[i];
+		i ++;
 	}
-	return(destination); 
+	return (dest);
 }

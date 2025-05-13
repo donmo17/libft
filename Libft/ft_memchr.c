@@ -1,15 +1,21 @@
-void *ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    size_t i = 0;
-    unsigned char *memory = (unsigned char *)memoryBlock;
-    unsigned char character = (unsigned char)searchedChar;
+	unsigned char	*scpy;
+	int				i;
+	int				j;
 
-    while (i < size)
-    {
-        if (memory[i] == character)
-            return ((void *)&memory[i]);
-        i++;
-    }
-    return NULL;
+	j = (int)n;
+	i = 0;
+	scpy = (unsigned char *)s;
+	while (i < j)
+	{
+		if (scpy[i] == (unsigned char)c)
+		{
+			return (&scpy[i]);
+		}
+		i ++;
+	}
+	return (NULL);
 }
-

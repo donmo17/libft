@@ -1,32 +1,35 @@
-#include <stdio.h>
+#include "libft.h"
 
-void *memmove(void *destination, const void *source, size_t size) {
-    unsigned char *d;
-    const unsigned char *s;
-    size_t i;
+void	functioncentral(unsigned char *dstcpy, unsigned char *srccpy,
+						size_t size)
+{
+	size_t	i;
 
-    d = (unsigned char *)destination;
-    s = (const unsigned char *)source;
-    
-    // Cas où source et destination sont identiques
-    if (d == s)
-        return destination;
-        
-    if (d < s) {
-        // Copie de gauche à droite
-        i = 0;
-        while (i < size) {
-            d[i] = s[i];
-            i++;
-        }
-    } else {
-        // Copie de droite à gauche
-        i = size;
-        while (i > 0) {
-            d[i - 1] = s[i - 1];
-            i--;
-        }
-    }
-    
-    return destination;
+	i = 0;
+	while (size > i)
+	{
+		if (dstcpy > srccpy)
+		{
+			dstcpy[size -1] = srccpy[size -1];
+			size --;
+		}
+		else
+		{
+			dstcpy[i] = srccpy[i];
+			i++ ;
+		}
+	}
+}
+
+void	*ft_memmove(void *dst, const void *src, size_t size )
+{
+	unsigned char	*dstcpy;
+	unsigned char	*srccpy;
+
+	if (!dst && !src)
+		return (NULL);
+	dstcpy = (unsigned char *) dst;
+	srccpy = (unsigned char *) src;
+	functioncentral(dstcpy, srccpy, size);
+	return (dstcpy);
 }

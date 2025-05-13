@@ -1,14 +1,9 @@
-#include <stddef.h>
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+int	ft_isalnum(int c)
 {
-    size_t i = 0; 
-    unsigned char *ptr = (unsigned char *)s; // Conversion en char *
-
-    while (i < n)
-    {
-        ptr[i] = 0;
-        i++;
-    }
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+		return (1);
+	return (0);
 }
-

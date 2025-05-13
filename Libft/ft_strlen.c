@@ -1,15 +1,11 @@
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
-int ft_strlen(char *str)
-{	
-	int i;
-	i = 0 ; 
-	while(str[i])
+size_t	ft_strlen( const char *theString )
+{
+	size_t	i;
+
+	i = 0;
+	while (theString[i])
 		i++;
-
-return (i);
+	return (i);
 }
-
-
-

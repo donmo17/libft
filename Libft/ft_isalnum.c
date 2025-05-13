@@ -1,14 +1,9 @@
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
-int ft_alnum(int character)
+int	ft_isalnum(int c)
 {
-    if ((character >= '0' && character <= '9') || 
-        (character >= 'A' && character <= 'Z') || 
-        (character >= 'a' && character <= 'z'))
-    {
-        return (1);
-    }
-    return (0);
-
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+		return (1);
+	return (0);
 }
