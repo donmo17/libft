@@ -1,6 +1,6 @@
 # Libft
 
-Bienvenue dans ma `libft`, ma première bibliothèque C codée dans le cadre du cursus de l'école 42.
+Bienvenue dans ma `libft`, ma  bibliothèque C codée dans le cadre de mon cursus 42.
 
 ## 📚 Description
 
